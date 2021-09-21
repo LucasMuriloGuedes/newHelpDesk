@@ -47,8 +47,8 @@ public class OrdemServicoService {
         newObj.setDataAbertura(LocalDateTime.now());
         newObj.setId(objDTO.getId());
         newObj.setObservacao(objDTO.getObservacao());
-        newObj.setPrioridade(Prioridade.toEnum(objDTO.getPrioridade()));
-        newObj.setStatus(Status.toEnum(objDTO.getStatus()));
+        newObj.setPrioridade(Prioridade.toEnum(objDTO.getPrioridade().getCod()));
+        newObj.setStatus(Status.toEnum(objDTO.getStatus().getCod()));
         Cliente cli = clienteService.findById(objDTO.getCliente());
         Tecnico tec = tecnicoService.findById(objDTO.getTecnico());
         newObj.setCliente(cli);

@@ -2,6 +2,8 @@ package com.lucasmurilo.newhelpdesk.dtos;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.lucasmurilo.newhelpdesk.domain.OrdemServico;
+import com.lucasmurilo.newhelpdesk.domain.enums.Prioridade;
+import com.lucasmurilo.newhelpdesk.domain.enums.Status;
 
 import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
@@ -59,8 +61,8 @@ public class OrdemServicoDTO implements Serializable {
         this.dataFechamento = dataFechamento;
     }
 
-    public Integer getPrioridade() {
-        return prioridade;
+    public Prioridade getPrioridade() {
+        return Prioridade.toEnum(prioridade);
     }
 
     public void setPrioridade(Integer prioridade) {
@@ -75,8 +77,8 @@ public class OrdemServicoDTO implements Serializable {
         this.observacao = observacao;
     }
 
-    public Integer getStatus() {
-        return status;
+    public Status getStatus() {
+        return Status.toEnum(this.status);
     }
 
     public void setStatus(Integer status) {
